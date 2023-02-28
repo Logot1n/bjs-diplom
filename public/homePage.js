@@ -89,8 +89,8 @@ const favoritesWidget = new FavoritesWidget();
 
 ApiConnector.getFavorites((response) => {
     if(response.success) {
-        ratesBoard.clearTable();
-        ratesBoard.fillTable(response.data);
+        favoritesWidget.clearTable();
+        favoritesWidget.fillTable(response.data);
         moneyManager.updateUsersList(response.data);
     }
 });
@@ -100,8 +100,8 @@ favoritesWidget.addUserCallback = (data) => {
 
     const callback = (response) => {
         if(response.success) {
-            ratesBoard.clearTable();
-            ratesBoard.fillTable(response.data);
+            favoritesWidget.clearTable();
+            favoritesWidget.fillTable(response.data);
             moneyManager.updateUsersList(response.data);
             favoritesWidget.setMessage(response.success, "Успешное добавление пользователя в Адресную книгу");
         } else {
@@ -117,8 +117,8 @@ favoritesWidget.removeUserCallback = () => {
     
     const callback = (response) => {
         if(response.success) {
-            ratesBoard.clearTable();
-            ratesBoard.fillTable(response.data);
+            favoritesWidget.clearTable();
+            favoritesWidget.fillTable(response.data);
             moneyManager.updateUsersList(response.data);
             favoritesWidget.setMessage(response.success, "Успешное удаление пользователя из Адресной книги");
         } else {
